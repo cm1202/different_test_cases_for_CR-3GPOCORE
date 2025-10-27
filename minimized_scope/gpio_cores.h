@@ -81,7 +81,8 @@ public:
     *
     */
    enum {
-      DATA_REG = 0 /**< output data register */
+      DATA_REG = 0,
+      SPEED_REG = 1 /**< output data register */
    };
    /**
     * constructor.
@@ -105,11 +106,13 @@ public:
     *
     */
    void write(int bit_value, int bit_pos);
+   void write_s(uint16_t speed);
 
 private:
    uint32_t base_addr;
    uint32_t wr_data;      // same as GPO core data reg
 };
+
 
 
 /**********************************************************************
